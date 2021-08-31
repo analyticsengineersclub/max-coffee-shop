@@ -1,0 +1,27 @@
+version: 2
+
+sources:
+  - name: coffee_shop
+    project: analytics-engineers-club
+    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. In scelerisque mi eu lacus lobortis, pellentesque lobortis dui faucibus. Aenean at tristique nunc. Sed pellentesque vel diam sed malesuada. Quisque lobortis a orci ac pretium.
+    freshness:
+      error_after:
+        count: 12
+        period: hour
+    loaded_at_field: created_at
+    tables:
+      - name: customers
+        description: source for all customers
+        columns:
+          - name: id
+            tests:
+              - unique
+              - not_null
+
+      - name: orders
+        description: source for all orders
+        columns:
+          - name: id
+            tests:
+              - unique
+              - not_null
