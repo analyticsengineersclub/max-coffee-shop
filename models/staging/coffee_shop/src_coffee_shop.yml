@@ -11,7 +11,7 @@ sources:
     loaded_at_field: created_at
     tables:
       - name: customers
-        description: source for all customers
+        description: one row per customer
         columns:
           - name: id
             tests:
@@ -19,7 +19,31 @@ sources:
               - not_null
 
       - name: orders
-        description: source for all orders
+        description: one row per order
+        columns:
+          - name: id
+            tests:
+              - unique
+              - not_null
+
+      - name: order_items
+        description: one row per order line item
+        columns:
+          - name: id
+            tests:
+              - unique
+              - not_null
+
+      - name: products
+        description: one row per product
+        columns:
+          - name: id
+            tests:
+              - unique
+              - not_null
+
+      - name: product_prices
+        description: one row per product and price
         columns:
           - name: id
             tests:
