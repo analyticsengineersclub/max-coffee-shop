@@ -19,7 +19,9 @@ product_prices as (
 final as (
     select 
         order_items.order_item_id
+        , orders.order_id
         , orders.created_at
+        , products.name
         , products.category
         , product_prices.product_price
 
