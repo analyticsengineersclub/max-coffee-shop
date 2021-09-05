@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: customers
+  - name: dim_customers
     description: Cleaned up data for our customers
     columns:
       - name: customer_id
