@@ -1,4 +1,3 @@
-sql
 select
     products.category,
     orders.state,
