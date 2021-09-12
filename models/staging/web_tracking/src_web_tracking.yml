@@ -1,0 +1,14 @@
+version: 2
+
+sources:
+  - name: web_tracking
+    project: analytics-engineers-club
+    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. In scelerisque mi eu lacus lobortis, pellentesque lobortis dui faucibus. Aenean at tristique nunc. Sed pellentesque vel diam sed malesuada. Quisque lobortis a orci ac pretium.
+    tables:
+      - name: pageviews
+        description: one row per pageview
+        columns:
+          - name: id
+            tests:
+              - unique
+              - not_null
