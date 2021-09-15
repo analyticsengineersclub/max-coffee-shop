@@ -20,6 +20,7 @@ final as (
     select 
         order_items.order_item_id
         , orders.order_id
+        , orders.customer_id
         , orders.created_at
         , products.name
         , products.category
