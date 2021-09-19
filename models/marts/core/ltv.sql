@@ -1,3 +1,5 @@
+{# Deprecated #}
+
 with line_items as (
     select * from {{ ref('fct_line_items') }}
 ),
