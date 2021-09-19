@@ -13,7 +13,7 @@ with customer_orders as (
 )
 
 select
-    c.id AS customer_id,
+    c.id as customer_id,
     c.name,
     c.email,
     co.first_order_at,

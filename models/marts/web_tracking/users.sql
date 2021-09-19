@@ -55,12 +55,12 @@ sessionized as (
         , session_sequence.session_start_at
         , session_sequence.next_session_start_at
         , us.user_id
-        , us.id as pageview_id
+        , us.pageview_id
         , us.timestamp
         , us.customer_id
         , us.visitor_id
         , us.device_type
-        , us.page
+        , us.page_path
     from session_sequence
     left join user_stitching us on us.user_id = session_sequence.user_id
     and us.timestamp >= session_sequence.session_start_at
