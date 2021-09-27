@@ -35,3 +35,9 @@ models:
   coffee_shop:
       # Applies to all files under models/example/
     materialized: view
+
+vars:
+  github__using_repo_team: false
+  github_source:
+    github_database: analytics-engineers-club
+    github_schema: github
