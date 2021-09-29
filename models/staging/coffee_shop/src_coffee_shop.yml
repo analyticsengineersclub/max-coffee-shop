@@ -25,6 +25,9 @@ sources:
             tests:
               - unique
               - not_null
+          - name: total
+            tests:
+              - greater_than_zero
 
       - name: order_items
         description: one row per order line item
@@ -55,4 +58,7 @@ sources:
             tests:
               - unique
               - not_null
+          - name: price
+            tests:
+              - greater_than_zero
               
