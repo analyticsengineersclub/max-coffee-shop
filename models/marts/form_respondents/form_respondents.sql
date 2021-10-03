@@ -1,9 +1,13 @@
 {{ config(
-    materialized='table'
+    materialized='incremental',
+    unique_key='github_username'
 ) }}
 
 with events as (
     select * from {{ source('advanced_dbt_examples', 'form_events') }}
+    {% if is_incremental() %}
+    where timestamp >= (select date_add(max(last_form_entry), interval -1 hour) from {{ this }})
+    {% endif %}
 ),
 
 aggregated as (
