@@ -1,4 +1,5 @@
-{% set product_categories = ["coffee beans", "merch", "brewing supplies"] %}
+{# {% set  = ["coffee beans", "merch", "brewing supplies"] %} #}
+{% set product_categories = dbt_utils.get_column_values(table=ref('fct_line_items'), column='category') %}
 
 select
   date_trunc(created_at, month) as date_month,
