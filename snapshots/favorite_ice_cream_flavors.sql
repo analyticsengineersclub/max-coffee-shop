@@ -9,6 +9,6 @@
     )
 }}
 
-select * from {{ source('advanced_dbt_examples', 'favorite_ice_cream_flavors') }}
+select * from {{ ref('stg_google_form__favorite_ice_cream_flavors') }}
 
 {% endsnapshot %}
